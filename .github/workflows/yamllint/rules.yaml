@@ -1,0 +1,15 @@
+---
+  yaml-files:
+    - '*.yaml'
+    - '*.yml'
+    - '.yamllint'
+  extends: default
+  rules:
+    indentation:
+      spaces: consistent
+      indent-sequences: true
+      check-multi-line-strings: false
+    line-length: disable
+    truthy: disable
+    comments:
+      min-spaces-from-content: 1
