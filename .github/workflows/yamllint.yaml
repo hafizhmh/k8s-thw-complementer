@@ -22,7 +22,7 @@ jobs:
         run: |
           {
             echo 'value<<EOF'
-            git diff origin/main HEAD --name-only | jq -R -s 'split("\n") | .[:-1]')
+            git diff origin/main HEAD --name-only | jq -R -s 'split("\n") | .[:-1]'
             echo EOF
           } >> "$GITHUB_OUTPUT"
       - name: Print changed files
