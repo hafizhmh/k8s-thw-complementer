@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        value: ${{fromJSON(needs.setup.outputs.matrix)}}
+        value: ${{ needs.setup.outputs.matrix }}
     steps:
       - name: Fetch working branch
         uses: actions/checkout@v4
