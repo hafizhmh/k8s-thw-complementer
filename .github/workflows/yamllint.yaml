@@ -11,15 +11,15 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.value }}
     steps:
-      - name: Fetch master branch
+      - name: Fetch main branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
       - name: Fetch working branch
         uses: actions/checkout@v4
       - name: Get changed packages
         id: matrix
-        run: git diff origin/master HEAD --name-only >> $GITHUB_OUTPUT
+        run: git diff origin/main HEAD --name-only >> $GITHUB_OUTPUT
       - name: Print changed files
         run: echo "${{ steps.matrix.outputs.value }}"
   lint:
